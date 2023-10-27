@@ -19,7 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth', 'verified'])->name('tvshows');
+Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
