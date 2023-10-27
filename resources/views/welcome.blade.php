@@ -36,6 +36,9 @@
             <div>
                 <img src="https://assets.nflxext.com/ffe/siteui/vlv3/dace47b4-a5cb-4368-80fe-c26f3e77d540/50863f1d-166c-4c7e-8423-e366e60229dc/US-en-20231023-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="">
             </div>
+            <div class="absolute top-50 right-50 text-white text-bold text-9xl font-sans">
+                CS 425
+            </div>
         </div>
     </body>
 </html>
