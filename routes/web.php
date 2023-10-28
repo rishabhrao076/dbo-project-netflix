@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/', function () {
 Route::get('/home',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth', 'verified'])->name('tvshows');
 Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
+Route::get('/cards',[CardController::class,'view'])->middleware(['auth', 'verified'])->name('cards');
 
 
 Route::middleware('auth')->group(function () {
