@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\ContentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('/home',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/content-metadata',[ContentController::class,'getMetadata'])->prefix('api')->middleware(['auth', 'verified'])->name('content.metadata');
+
 Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth', 'verified'])->name('tvshows');
 Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
 Route::get('/cards',[CardController::class,'view'])->middleware(['auth', 'verified'])->name('cards');
