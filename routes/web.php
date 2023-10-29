@@ -24,6 +24,7 @@ Route::get('/home',[DashboardController::class,'dashboard'])->middleware(['auth'
 Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth', 'verified'])->name('tvshows');
 Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
 Route::get('/cards',[CardController::class,'view'])->middleware(['auth', 'verified'])->name('cards');
+Route::patch('/cards/update',[CardController::class,'update'])->middleware(['auth', 'verified'])->name('cards.update');
 
 
 Route::middleware('auth')->group(function () {

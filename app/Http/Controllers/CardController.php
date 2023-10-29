@@ -20,4 +20,9 @@ class CardController extends Controller
         }
        
     }
+
+    public function update(Request $request) {
+        // Request Comes here fire update query here
+        dd($request);
+    }
 }
