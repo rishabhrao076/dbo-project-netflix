@@ -28,6 +28,8 @@ Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth
 Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
 Route::get('/cards',[CardController::class,'view'])->middleware(['auth', 'verified'])->name('cards');
 Route::patch('/cards/update',[CardController::class,'update'])->middleware(['auth', 'verified'])->name('cards.update');
+Route::delete('/cards/delete',[CardController::class,'delete'])->middleware(['auth', 'verified'])->name('cards.delete');
+Route::patch('/cards/add',[CardController::class,'add'])->middleware(['auth', 'verified'])->name('cards.add');
 
 
 Route::middleware('auth')->group(function () {
