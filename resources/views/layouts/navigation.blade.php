@@ -12,13 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('movies')">
+                    <x-nav-link :href="route('movies')" :active="request()->routeIs('movies')">
                         Movies
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('tvshows')">
+                    <x-nav-link :href="route('tvshows')" :active="request()->routeIs('tvshows')">
                         TV Shows
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('tvshows')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('language')">
                         Browse by Languages
                     </x-nav-link>
                 </div>

@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::get('/home',[DashboardController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/movies',[DashboardController::class,'movies'])->middleware(['auth', 'verified'])->name('movies');
+Route::get('/tvshows',[DashboardController::class,'tvShows'])->middleware(['auth', 'verified'])->name('tvshows');
 
 Route::get('/content-metadata',[ContentController::class,'getMetadata'])->prefix('api')->middleware(['auth', 'verified'])->name('content.metadata');
 
