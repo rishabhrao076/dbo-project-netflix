@@ -18,6 +18,7 @@ class ContentFactory extends Factory
     {
         return [
             'title' => fake()->words(rand(1,5),true),
+            'content_type' => fake()->numberBetween(1,3), // 1 is Movie, 2 is TV Show, 3 is Interactive/Game
             'description' => fake()->paragraph(),
             'director' => fake()->name(),
             'rating' => fake()->numberBetween(1,10)

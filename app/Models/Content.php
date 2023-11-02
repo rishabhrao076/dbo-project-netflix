@@ -15,7 +15,7 @@ class Content extends Model
 
     protected $primaryKey = "content_id";
 
-    protected $fillable = ['title','description','rating','director'];
+    protected $fillable = ['title','description','rating','director','content_type'];
 
     public function media() {
         return $this->hasMany(Media::class);

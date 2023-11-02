@@ -17,7 +17,7 @@ class MediaFactory extends Factory
     public function definition(): array
     {
         return [
-            'media_type' => fake()->numberBetween(1,3),
+            // 'media_type' => fake()->numberBetween(1,3),
             'duration' => "0".rand(0,5).":".rand(0,5).rand(0,9).":".rand(0,5).rand(0,9),
             'media_title' => fake()->words(rand(1,5),true),
             'media_description' => fake()->paragraph(),
