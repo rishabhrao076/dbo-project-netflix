@@ -20,9 +20,16 @@ class ContentMediaSeeder extends Seeder
 
         $languages = DB::table('languages')->get();
         $genres = DB::table('genre')->get();
+        $contentCount = 1;
 
-        Content::factory(10000)->create()->each(function ($content) use($genres,$languages){
-            Media::factory()->count(rand(1,16))->create([
+        Content::factory(10000)->create()->each(function ($content) use($genres,$languages,$contentCount){
+            if($content->content_type == 1) {
+                $contentCount = 1;
+            }else {
+                $contentCount = rand(1,16);
+            }
+
+            Media::factory()->count($contentCount)->create([
                 'content_id' => $content->content_id,
             ]);
 
