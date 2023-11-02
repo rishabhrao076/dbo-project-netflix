@@ -31,7 +31,14 @@
                 </div>
             </div>
             <div class="col-span-2 mb-4 flex flex-col">
-                <h2 class="text-xl font-bold">Episodes</h2>
+                <h2 class="text-xl font-bold m-2">
+                    <template x-if="$store.contentStore.content_type == 1">
+                        <span>Movie</span>
+                    </template>
+                    <template x-if="$store.contentStore.content_type != 1">
+                        <span>Episodes</span>
+                    </template>
+                </h2>
                 <template x-for="media in $store.contentStore.medias" :key="media.media_id">
                     <div class="p-4 shadow-md">
                         <span class="text-xl font-bold" x-text="media.media_title"></span>
@@ -50,6 +57,7 @@
             director: '',
             genre: '',
             language: '',
+            content_type: '',
             medias: {},
             getData(contentId) {
                 // Make an Ajax request using Axios
@@ -66,8 +74,8 @@
                     this.description = response.data[0].description;
                     this.genre = response.data[0].genres;
                     this.language = response.data[0].languages;
+                    this.content_type = response.data[0].content_type;
                     this.medias = response.data;
-
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
